@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "/yo1M28AOTiV+sXbSy7EbTWsPnXii16Uh2wYsOhlVkLpbTz6E47cIpzjbNFmB4aVDJ8dExmhJIO7flJ0R4EW0w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ingma_8dyy2c5\\Projects\\School\\OneDrive - ROC Midden Nederland\\lvl8\\QuizTime\\Quiztime\\Quiztime\\Quiztime.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ingma_8dyy2c5\\.nuget\\packages\\mysqlconnector\\2.1.9\\mysqlconnector.2.1.9.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,118 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0-windows7.0": {
+      "MySqlConnector/2.1.9": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/MySqlConnector.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/MySqlConnector.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MySqlConnector/2.1.9": {
+      "sha512": "72fgNLG3qVRaVkvjQOnY4jfbs7mukrMSWfu9b4l9LRwy5EKnPybRcDuaKtNI775c8FaeWgy/wEtV408opinAGQ==",
+      "type": "package",
+      "path": "mysqlconnector/2.1.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net45/MySqlConnector.dll",
+        "lib/net45/MySqlConnector.xml",
+        "lib/net461/MySqlConnector.dll",
+        "lib/net461/MySqlConnector.xml",
+        "lib/net471/MySqlConnector.dll",
+        "lib/net471/MySqlConnector.xml",
+        "lib/net5.0/MySqlConnector.dll",
+        "lib/net5.0/MySqlConnector.xml",
+        "lib/net6.0/MySqlConnector.dll",
+        "lib/net6.0/MySqlConnector.xml",
+        "lib/netcoreapp3.1/MySqlConnector.dll",
+        "lib/netcoreapp3.1/MySqlConnector.xml",
+        "lib/netstandard2.0/MySqlConnector.dll",
+        "lib/netstandard2.0/MySqlConnector.xml",
+        "lib/netstandard2.1/MySqlConnector.dll",
+        "lib/netstandard2.1/MySqlConnector.xml",
+        "logo.png",
+        "mysqlconnector.2.1.9.nupkg.sha512",
+        "mysqlconnector.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0-windows7.0": [
+      "MySqlConnector >= 2.1.9"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\ingma_8dyy2c5\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\ingma_8dyy2c5\\Projects\\School\\OneDrive - ROC Midden Nederland\\lvl8\\QuizTime\\Quiztime\\Quiztime\\Quiztime.csproj",
+      "projectName": "Quiztime",
+      "projectPath": "C:\\Users\\ingma_8dyy2c5\\Projects\\School\\OneDrive - ROC Midden Nederland\\lvl8\\QuizTime\\Quiztime\\Quiztime\\Quiztime.csproj",
+      "packagesPath": "C:\\Users\\ingma_8dyy2c5\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ingma_8dyy2c5\\Projects\\School\\OneDrive - ROC Midden Nederland\\lvl8\\QuizTime\\Quiztime\\Quiztime\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\ingma_8dyy2c5\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0-windows7.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0-windows7.0": {
+        "targetAlias": "net6.0-windows",
+        "dependencies": {
+          "MySqlConnector": {
+            "target": "Package",
+            "version": "[2.1.9, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

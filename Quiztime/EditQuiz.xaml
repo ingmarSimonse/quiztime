@@ -1,0 +1,200 @@
+﻿<Window x:Class="Quiztime.EditQuiz"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Quiztime"
+        mc:Ignorable="d" WindowState="Maximized"
+        Title="Wijzig Quiz" Height="450" Width="800"  Background="#1C1C1E">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="30*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="89*"/>
+        </Grid.RowDefinitions>
+
+        <Viewbox Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right">
+            <Button x:Name="btnAdd" BorderBrush="Transparent" Content="➕">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Foreground" Value="#FFFDFA"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#808080"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Viewbox>
+
+        <Viewbox Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2">
+            <Border BorderBrush="Transparent" BorderThickness="1">
+                <TextBox x:Name="txbQuizName" FontFamily="{StaticResource Heebo}" BorderThickness="0" Padding="10 1 10 1" TextWrapping="Wrap" Text="">
+                    <TextBox.Style>
+                        <Style TargetType="{x:Type TextBox}">
+                            <Setter Property="Background" Value="#FFFDFA"/>
+                            <Setter Property="Foreground" Value="#1C1C1E"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#f2f2f2"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+            </Border>
+        </Viewbox>
+
+        <Viewbox Grid.Column="3" Grid.Row="1" HorizontalAlignment="Left">
+            <Button x:Name="btnSave" BorderBrush="Transparent" Content="💾">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Foreground" Value="#FFFDFA"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#808080"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Viewbox>
+
+        <ScrollViewer x:Name="scrollViewer" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4" VerticalAlignment="Top" 
+                      ScrollViewer.CanContentScroll="True" VerticalScrollBarVisibility="Auto">
+            <Viewbox>
+                <DataGrid Name="dgQuiz" BorderBrush="Transparent" Background="Transparent" AutoGenerateColumns="False" 
+                                         HeadersVisibility="None"
+                                         HorizontalAlignment="Center" 
+                                         HorizontalScrollBarVisibility="Disabled"
+                                         ItemsSource="{Binding}" 
+                                         CanUserResizeRows="False"
+                                         CanUserAddRows="False"
+                                         PreviewMouseWheel="DataGrid_PreviewMouseWheel">
+
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Background" Value="#1C1C1E" />
+                            <Setter Property="Foreground" Value="#FFFDFA"/>
+                            <Setter Property="BorderBrush" Value="#808080" />
+                            <Setter Property="BorderThickness" Value="0 1 0 1" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#1f1f21"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="#343434"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.RowStyle>
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Path=question}"  FontFamily="{StaticResource Heebo}" Header="" Width="585" IsReadOnly="True">
+                            <DataGridColumn.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter Property="Background" Value="#252527"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGridColumn.CellStyle>
+                        </DataGridTextColumn>
+
+                        <DataGridTemplateColumn Width="100">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Wijzigen" Click="BtnEdit_Click" FontFamily="{StaticResource Heebo}">
+                                        <Button.Style>
+                                            <Style TargetType="{x:Type Button}">
+                                                <Setter Property="Background" Value="#252527"/>
+                                                <Setter Property="Foreground" Value="#FFFDFA"/>
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="{x:Type Button}">
+                                                            <Border Background="{TemplateBinding Background}">
+                                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                            </Border>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="#808080"/>
+                                                        <Setter Property="Foreground" Value="#1C1C1E"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Width="100">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Verwijderen" Click="BtnDelete_Click" FontFamily="{StaticResource Heebo}">
+                                        <Button.Style>
+                                            <Style TargetType="{x:Type Button}">
+                                                <Setter Property="Background" Value="#252527"/>
+                                                <Setter Property="Foreground" Value="#FFFDFA"/>
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="{x:Type Button}">
+                                                            <Border Background="{TemplateBinding Background}">
+                                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                            </Border>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="#808080"/>
+                                                        <Setter Property="Foreground" Value="#1C1C1E"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Viewbox>
+        </ScrollViewer>
+    </Grid>
+</Window>

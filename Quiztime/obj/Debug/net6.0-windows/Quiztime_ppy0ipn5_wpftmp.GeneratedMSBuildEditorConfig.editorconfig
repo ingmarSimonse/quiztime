@@ -1,0 +1,10 @@
+is_global = true
+build_property.TargetFramework = net6.0-windows
+build_property.TargetPlatformMinVersion = 7.0
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Quiztime_ppy0ipn5_wpftmp
+build_property.ProjectDir = C:\Users\ingma_8dyy2c5\Projects\School\OneDrive - ROC Midden Nederland\lvl8\QuizTime\Quiztime\Quiztime\
