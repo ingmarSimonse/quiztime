@@ -1,0 +1,9 @@
+﻿<Application x:Class="Quiztime.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Quiztime"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <FontFamily x:Key="Heebo">pack://application:,,,/fonts/#Heebo</FontFamily>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,11 @@
+bin/
+obj/
+fonts/
+images/
+sounds/
+App.config
+AssemblyInfo.cs
+App.xaml.cs
+logo.ico
+Quiztime.csproj.user
+Quiztime_lc2205cd_wpftmp.csproj
